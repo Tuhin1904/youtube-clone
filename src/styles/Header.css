@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 1rem;
+    position: sticky;
+    top:0;
+    z-index: 10;
+    background-color: white;
+
+    & div{
+        display: flex;
+        align-items: center;
+    }
+    & .headerMiddle{
+        width:50%;
+        justify-content: center;
+        & input{
+            width: 50%;
+            flex:1;
+        }
+    }
+    & .rightIcons{
+        margin-right: 10px;
+    }
+   
+}
+.youtubeLogo{
+    height: 4rem;
+    object-fit: contain;
+}

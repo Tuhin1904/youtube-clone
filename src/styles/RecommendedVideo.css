@@ -1,0 +1,5 @@
+.recVideos{
+    flex:0.8;
+    /* 80% of the total width of the container */
+    border: 1px solid black;
+}
