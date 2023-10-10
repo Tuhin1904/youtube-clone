@@ -1,0 +1,35 @@
+.sideBarRow{
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    margin-left: 10px;
+    width: 77%;
+    border-radius: 5px;
+    & h4{
+        font-weight: 500;
+    }
+    &:hover{
+        background-color: rgb(221, 219, 219);
+        /* color: rgb(199, 199, 199); */
+        & .sideIcon{
+            color: rgb(233, 2, 2);
+        }
+    }
+}
+.sideBarRow.selected{
+    background-color: rgb(221, 219, 219);
+    & h4{
+        font-weight: bold;
+    }
+    & .sideIcon{
+        color:rgb(233, 2, 2)  ;
+    }
+}
+
+.sideIcon{
+    margin-right: 5px;
+    
+}
+.sideBarTitle{
+    flex:1;
+}

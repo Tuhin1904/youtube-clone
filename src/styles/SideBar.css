@@ -1,4 +1,12 @@
 .sideBar{
     flex:0.2;
     /* 20% of parent container  */
+    line-height: 1.55rem;
+}
+hr{
+    width: 70%;
+    height: 1px;
+    background-color: grey;
+    margin: 1rem 0 1rem 1.4rem;
+    border: 0;
 }

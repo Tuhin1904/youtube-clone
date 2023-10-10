@@ -1,5 +1,10 @@
 .recVideos{
     flex:0.8;
     /* 80% of the total width of the container */
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    padding: 2rem 1rem;
+    & .eachVideo{
+        display: flex;
+       flex-wrap: wrap;
+    }
 }
