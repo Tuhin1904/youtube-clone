@@ -2,6 +2,8 @@
     flex:0.2;
     /* 20% of parent container  */
     line-height: 1.55rem;
+    position: fixed;
+    width: 30%;
 }
 hr{
     width: 70%;
