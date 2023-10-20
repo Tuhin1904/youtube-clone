@@ -16,11 +16,11 @@ function RecommendedVideos() {
       key: API_key,
       part:'snippet',
       chart:'mostPopular',
-      maxResult:10,
+      maxResults:20,
       regionCode:"IN"
     }))
     .then((res)=>{
-      console.log(res.data.items)
+      // console.log(res.data.items)
       setApiData(res.data.items)})
     .catch(err=> console.log('error is',err))
   },[])

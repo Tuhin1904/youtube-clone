@@ -9,7 +9,9 @@
         background-color: rgb(197, 196, 196);
         margin-top: 1rem;
         margin-bottom: 1rem;
+        
     }
+    margin-left: 25vw;
 }
 .filter{
     display: flex;
