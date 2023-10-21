@@ -4,7 +4,7 @@ import "./styles/SearchResult.css"
 import {FaFilter} from 'react-icons/fa'
 
 function SearchResult({searchQ, arrayVar}) {
-  const[res,setRes]=useState()
+  const[ress,setRes]=useState([])
   console.log(searchQ)
   const API_key="AIzaSyC5_FfKdlUpBVYKjqzpnAlUKSDPKloF6s8";
 
@@ -25,7 +25,7 @@ function SearchResult({searchQ, arrayVar}) {
       }
     })
   .then((res)=>{
-      console.log(res)
+      console.log("Search API response is,",res.data.items)
       setRes(res.data.items)
     })
   .catch((err)=> console.log("Tuhin your error is:",err))
@@ -41,7 +41,20 @@ function SearchResult({searchQ, arrayVar}) {
        </div>
        <hr />
        <ul>
-        
+        { ress.map((each,i)=>(
+          <li key={i} style={{display:"flex",marginBottom:'0.8rem'}}>
+          
+          <img src={each.snippet.thumbnails.medium.url} alt="" />
+          <div style={{marginLeft:"1rem"}}>
+          <h5>{each.snippet.title}</h5>
+          <br />
+          <h4>{each.snippet.channelTitle}</h4>
+          <p>{each.snippet.description}</p>
+          <p>Date:{each.snippet.publishedAt}</p>
+
+          </div>
+          </li>
+        ))}
        </ul>
 
     </div>
