@@ -10,6 +10,12 @@ import {useState} from 'react'
 function App() {
   const[searchQ,setSearchQ ]= useState('')
   const[c, setC]= useState(0)
+  const[vidId, setVidId]=useState('')
+
+  const handleVideoSelect = (id)=>{
+    setVidId(id)
+  }
+
   const handleSearch= (query) =>{
       setSearchQ(query)
   }
@@ -18,7 +24,7 @@ function App() {
       // console.log(newC)
       setC(newC)
   }
-
+  console.log("video id of video you clicked is:",vidId)
   return (
     <div className="App">
     <Header onSearch={handleSearch} onSubmit={changeVal}/>
@@ -27,7 +33,7 @@ function App() {
          <>
          <div className="app_body">
           <SideBar/>
-          <RecommendedVideos/>
+          <RecommendedVideos onVidSelect={handleVideoSelect}/>
          </div>
          </>
          }
@@ -35,7 +41,7 @@ function App() {
          <Route path="/search/:searchTerm" element={
          <div className="app_body">
           <SideBar/>
-          <SearchResult searchQ={searchQ} arrayVar={c}/>
+          <SearchResult searchQ={searchQ} arrayVar={c} onVideoSelect={handleVideoSelect}/>
          </div>
          }/>
          <Route path="/search/" element={
@@ -47,7 +53,7 @@ function App() {
          <Route path="/playvideo" element={
           <div className="app_body">
             <SideBar/>
-            <Playvideo/>
+            <Playvideo videoId={vidId}/>
           </div>
          }/>
           

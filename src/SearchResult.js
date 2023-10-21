@@ -2,11 +2,16 @@ import React,{useEffect,useState} from 'react'
 import axios from 'axios'
 import "./styles/SearchResult.css"
 import {FaFilter} from 'react-icons/fa'
+import {Link} from 'react-router-dom'
 
-function SearchResult({searchQ, arrayVar}) {
+function SearchResult({searchQ, arrayVar,onVideoSelect}) {
   const[ress,setRes]=useState([])
   console.log(searchQ)
   const API_key="AIzaSyC5_FfKdlUpBVYKjqzpnAlUKSDPKloF6s8";
+
+  const handleVideoClick =(id)=>{
+    onVideoSelect(id)
+  }
 
   useEffect(()=>{
 
@@ -42,7 +47,7 @@ function SearchResult({searchQ, arrayVar}) {
        <hr />
        <ul>
         { ress.map((each,i)=>(
-          <li key={i} style={{display:"flex",marginBottom:'0.8rem'}}>
+          <Link to='/playvideo' style={{ textDecoration: 'none', color: 'black' }} onClick={()=>handleVideoClick(each.id.videoId)}><li key={i} style={{display:"flex",marginBottom:'0.8rem'}}>
           
           <img src={each.snippet.thumbnails.medium.url} alt="" />
           <div style={{marginLeft:"1rem"}}>
@@ -53,7 +58,7 @@ function SearchResult({searchQ, arrayVar}) {
           <p>Date:{each.snippet.publishedAt}</p>
 
           </div>
-          </li>
+          </li></Link>
         ))}
        </ul>
 
