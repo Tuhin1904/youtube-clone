@@ -36,7 +36,7 @@ function RecommendedVideos({onVidSelect}) {
         <div className="eachVideo">
        { apiData.map((item,i)=>{
         
-        return <Link to='/playvideo' style={{ textDecoration: 'none', color: 'black' }} onClick={()=>handleVideoClick(item.id)}>
+        return <Link key={i} to='/playvideo' style={{ textDecoration: 'none', color: 'black' }} onClick={()=>handleVideoClick(item.id)}>
         <Eachvideo key={i} chanelname={item.snippet.channelTitle} title={item.snippet.title} thumbnail={item.snippet.thumbnails.medium} time={item.snippet.publishedAt} 
         
         />

@@ -35,7 +35,7 @@ function SearchResult({searchQ, arrayVar,onVideoSelect}) {
     })
   .catch((err)=> console.log("Tuhin your error is:",err))
   }
-  },[arrayVar]);
+  },[arrayVar,searchQ]);
 
   return (
     <div className="sResult">
@@ -47,7 +47,7 @@ function SearchResult({searchQ, arrayVar,onVideoSelect}) {
        <hr />
        <ul>
         { ress.map((each,i)=>(
-          <Link to='/playvideo' style={{ textDecoration: 'none', color: 'black' }} onClick={()=>handleVideoClick(each.id.videoId)}><li key={i} style={{display:"flex",marginBottom:'0.8rem'}}>
+          <Link key={i} to='/playvideo' style={{ textDecoration: 'none', color: 'black' }} onClick={()=>handleVideoClick(each.id.videoId)}><li key={i} style={{display:"flex",marginBottom:'0.8rem'}}>
           
           <img src={each.snippet.thumbnails.medium.url} alt="" />
           <div style={{marginLeft:"1rem"}}>
