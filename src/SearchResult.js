@@ -25,7 +25,7 @@ function SearchResult({searchQ, arrayVar,onVideoSelect}) {
       key: API_key,
       part:'snippet',
       chart:'mostPopular',
-      maxResults:10,
+      maxResults:15,
       q:searchQ,
       }
     })
